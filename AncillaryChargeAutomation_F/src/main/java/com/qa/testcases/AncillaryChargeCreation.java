@@ -31,7 +31,6 @@ public class AncillaryChargeCreation extends TestBase {
 	public void setExtent() {
 		// specify location of the report
 		htmlReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "/test-output-ancill/myReport.html");
-
 		htmlReporter.config().setDocumentTitle("Automation Report"); // Tile of report
 		htmlReporter.config().setReportName("Ancillary Charges Application Testing"); // Name of the report
 		htmlReporter.config().setTheme(Theme.STANDARD);

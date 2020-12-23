@@ -16,7 +16,7 @@ public class TestBase {
 		try
 		{
 			prop=new Properties();
-			FileInputStream fis=new FileInputStream("E:\\Old\\AncillaryChargeAutomation_F\\src\\main\\java\\com\\qa\\config\\config.properties");
+			FileInputStream fis=new FileInputStream("C:\\Users\\Sindhuja\\git\\AncillaryCharges\\AncillaryChargeAutomation_F\\src\\main\\java\\com\\qa\\config\\config.properties");
 			prop.load(fis);
 		}
 		catch(IOException e)

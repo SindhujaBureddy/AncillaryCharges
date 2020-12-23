@@ -140,13 +140,13 @@ public class AncillaryCharges extends TestBase {
 	WebElement invoice_click;
 	@FindBy(xpath = "//a[@id='custpage_chargebacktxt']")
 	WebElement charge_tab;
-	@FindBy(xpath = "//img[@id='inpt_custpage_appliedinvoice31_arrow']")
+	@FindBy(xpath = "//img[@id='inpt_custpage_appliedinvoice30_arrow']")
 	WebElement tran_arrow;
 	@FindBy(xpath = "//div[@class='dropdownDiv']//div")
 	List<WebElement> tran_dropdown;
 	@FindBy(xpath = "//input[@id='custpage_amount_formattedValue']")
 	WebElement charge_value;
-	@FindBy(xpath = "//img[@id='inpt_custpage_glaccount32_arrow']")
+	@FindBy(xpath = "//img[@id='inpt_custpage_glaccount31_arrow']")
 	WebElement charge_arrow;
 	@FindBy(xpath = "//div[@class='dropdownDiv']//div")
 	List<WebElement> charge_dropdown;
@@ -154,7 +154,7 @@ public class AncillaryCharges extends TestBase {
 	WebElement charge_namesss;
 	@FindBy(xpath = "//input[@id='undepfunds_fs_inp']")
 	List<WebElement> account_checkbox;
-	@FindBy(xpath = "//img[@id='inpt_account5_arrow']")
+	@FindBy(xpath = "//img[@id='inpt_account4_arrow']")
 	WebElement account_arrow;
 	@FindBy(xpath = "//div[@class='dropdownDiv']//div")
 	List<WebElement> account_dropdown;
@@ -300,9 +300,12 @@ public class AncillaryCharges extends TestBase {
 		accept_payment.click();
 		Thread.sleep(3000);
 		account_checkbox.get(1).click();
-		Thread.sleep(5000);
+		WebDriverWait wait=new WebDriverWait(driver, 50);
+		wait.until(ExpectedConditions.visibilityOf(account_arrow));
+		Actions action=new Actions(driver);
+		action.moveToElement(account_arrow).build().perform();
 		account_arrow.click();
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOf(account_dropdown.get(0)));
 		account_dropdown.get(2).click();
 	}
 
